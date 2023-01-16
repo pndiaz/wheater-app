@@ -7,7 +7,7 @@ const messageTwo = document.querySelector('#message-2')
 
 weatherForm.addEventListener('submit', (e) => {
     //Avoid page refreshing
-    e.preventDefault() 
+    e.preventDefault()
     const location = search.value
     messageOne.textContent = 'Loading...'
     messageTwo.textContent = ''
@@ -17,7 +17,7 @@ weatherForm.addEventListener('submit', (e) => {
                 messageOne.textContent = data.error
             } else {
                 messageOne.textContent = data.location
-                messageTwo.textContent = data.forecast.current.temperature
+                messageTwo.textContent = "It's " + data.forecast.current.weather_descriptions + ".The Temperature is " + data.forecast.current.temperature + "F degrees and the humidity is " + data.forecast.current.humidity + "%"
             }
         })
     })
