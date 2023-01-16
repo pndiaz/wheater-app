@@ -10,8 +10,9 @@ const forecast = (lat, long, callback) => {
             console.log(body.error)
             callback('Unable to find forecast')
         } else {
+            console.log(body.current)
             callback(undefined, {
-                current: body.current,
+                current: "It's " + body.current.weather_descriptions[0] + ". The Temperature is " + body.current.temperature + "F degrees and the humidity is " + body.current.humidity + "%",
             })
         }
     })
